@@ -13,9 +13,10 @@ resource "aws_vpc" "sanket_test_1" {
 }
 
 resource "aws_subnet" "subnets" {
-  count      = "${length(var.azs)}"
-  vpc_id     = "${aws_vpc.sanket_test_1.id}"
-  cidr_block = "${element(var.vpc_subnet_cidr, count.index)}"
+  count             = "${length(data.aws_availability_zones.azs.names)}"
+  availability_zone = "${element(data.aws_availability_zones.azs.names, count.index)}"
+  vpc_id            = "${aws_vpc.sanket_test_1.id}"
+  cidr_block        = "${element(var.vpc_subnet_cidr, count.index)}"
 
   tags {
     Name = "subnet_${count.index+1}"
