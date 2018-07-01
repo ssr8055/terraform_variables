@@ -17,9 +17,9 @@ Once the flow log group is created it it starts forwarding all VPC flow logs to 
 
 Variables
 =========
-aws_iam_role_arn : Default IAM role arn for flow log role. (You can modify the this paramater, based your requirement)
+  aws_iam_role_arn : Default IAM role arn for flow log role. (You can modify the this paramater, based your requirement)
 
-aws_vps_region : it checks the AWS region where VPC is deployed.
+  aws_vps_region : it checks the AWS region where VPC is deployed.
 
-aws_vpcs : aws_vpc provides details about a specific VPC.
-(Please check following link for more details: https://www.terraform.io/docs/providers/aws/d/vpc.html )
+  aws_vpcs : aws_vpc provides details about a specific VPC.
+  (Please check following link for more details: https://www.terraform.io/docs/providers/aws/d/vpc.html )
